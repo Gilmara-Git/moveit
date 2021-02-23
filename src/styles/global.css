@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --white: #fff;
+    --background: #F2F3F5;
+    --gray-line:#DCDDE0;
+    --text: #666666;
+    --text-hightlight: #B3B9FF;
+    --title: #2E384D;
+    --red: #E83F5B;
+    --green: #4CD62B;
+    --blue: #5965E0;
+    --blue-dark: #4953B8;
+    --blue-twitter: #2AA9E0;
+
+}
+
+/*Se a tela for menor que 1080, estaremos diminuindo 1px em tudo que leva "rem"*/
+/* 16px  = 1 rem  16x 0.93.75  = 15 */
+@media(max-width: 1080px){
+
+    html{
+
+        font-size: 93.75%;
+    }
+}
+
+/*Mobile para baixo - Diminuimos mais 1px  - 14px  */
+@media(max-width: 720px){
+
+    html{
+
+        font-size: 87.5%;
+    }
+}
+
+
+
+body{
+
+    background: var(--background);
+    color: var(--text);
+}
+
+body,input, textarea, button {
+
+    font: 400 1rem 'Inter', sans-serif;
+}
+
+button { 
+
+    cursor: pointer;
+}
+
+/* Color sera herdada da cor dos containers dos links */
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+
+.container {
+
+    height: 100vh;
+    max-width: 992px;
+    margin: 0 auto; 
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column; 
+
+}
+
+.experience-bar {
+
+    display: flex;
+    align-items: center; 
+
+}
+
+.experience-bar span {
+
+    font-size: 1rem;
+}
+/*estilizando a primeira div dentro de Experience bar */
+/* flex 1 e para esta div ocupar o maximo possivel do container */
+.experience-bar > div {
+    flex: 1;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--gray-line);
+    margin: 0 1.5rem;
+    position: relative;
+    
+}
+
+/* Estilizando a div dentro da div na Experience bar */
+/* A width dela esta setada la no componente Experience bar */
+
+.experience-bar > div > div {
+
+    height: 4px;
+    border-radius: 4px;
+    background: var(--green);
+  
+}
+
+span.current-experience {
+
+    position: absolute;
+    top: 12px;
+    transform: translateX(-50%); 
+    
+
+
+}
